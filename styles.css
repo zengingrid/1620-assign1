@@ -1,8 +1,9 @@
 body {
-    font-size: 20px;
+    font-size: 25px;
     font-family: 'Patrick Hand SC', cursive;
     background-color: #C4D0A7;
 }
+
 .container {
     display: grid;
     grid-gap: 7px;
@@ -37,6 +38,7 @@ body {
 .nav-menu li {
     font-family: 'Just Another Hand', cursive;
 }
+
 
 .content {
     grid-column: 85%;
@@ -102,4 +104,22 @@ textarea {
     margin: 0;
 }
 
+@media screen and (max-width: 700px){
+    
+    .container {
+        grid-template-columns: 100px 85%;
+        font-size: 18px;
+    }
 
+    .header {
+        justify-content: left;
+    }
+
+    .nav-menu li{
+        margin-left: -25px;
+    }
+
+    .footer p{
+        text-align: left;
+    }
+}
