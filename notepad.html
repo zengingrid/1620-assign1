@@ -11,20 +11,20 @@
 <body>
     <div class="container">
         <div class="header">Take Better Notes</div>
-        <div class="nav-menu">My Notes
+        <div class="nav">My Notes
             <ul>
                 <li>note one</li>
                 <li>note two</li>
             </ul>
         </div>
         <div class="content">
-            <button class="new" type="button">New Note</button>
-            <button class="dark" type="button">Dark Theme</button>
+            <button class="button" type="button" id="new">New Note</button>
+            <button class="button" type="button" id="dark" onclick="changeTheme()">Dark Theme</button>
             <textarea id="notearea" name="notearea" rows="4" cols="50">
             This is a placeholder...
             </textarea> 
-            <button class="save" type="button">Save</button>
-            <button class="cancel" type="button">Cancel</button>
+            <button class="button" type="button" id="save">Save</button>
+            <button class="button" type="button" id="cancel">Cancel</button>
         </div>
         <div class="footer">
             <p>Keep in Touch</p>
