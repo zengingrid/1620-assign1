@@ -19,7 +19,7 @@ body {
     grid-column: 1 / -1;
     grid-row: 1;
     font: 30px bold;
-    margin: 0;
+    margin-top: -10px;
 }
 
 .header {
@@ -37,6 +37,7 @@ body {
 
 .nav-menu li {
     font-family: 'Just Another Hand', cursive;
+    margin-left: -15px;
 }
 
 
