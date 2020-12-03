@@ -45,3 +45,36 @@ function hideArea() {
         cancelBtn.style.display = "none";
         saveBtn.style.display = "none";
 }
+
+
+let click = 0
+function newNote() {
+    if (click%2==0) {
+        notearea.style.display = "block";
+        cancelBtn.style.display = "block";
+        saveBtn.style.display = "block";
+        click++;
+    } else {
+        notearea.innerHTML = "Note has been cleared"
+        click++;
+    }
+}
+
+
+ const notesArray = [
+     { title: "note one", body: "some text 1"},
+     { title: "note two", body: "some text 2"},
+]
+
+
+const ul = document.getElementById("ul");
+function saveNote(notesArray) {
+    listLength = notearea.value.split(".").length;
+    title = notearea.value.split(".")[0];
+    body= notearea.value.split(".").splice(1,listLength);
+    newObject = {title: `${title}`, body: `${body}`};
+    notesArray.push(newObject);
+    ul.innerHTML += `<li> ${title} </li>`
+}
+
+
