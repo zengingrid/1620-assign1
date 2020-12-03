@@ -49,25 +49,26 @@ function hideArea() {
 
 let click = 0
 function newNote() {
-    if (click%2==0) {
+    if (click == 0) {
         notearea.style.display = "block";
         cancelBtn.style.display = "block";
         saveBtn.style.display = "block";
-        click++;
+        click = 1;
     } else {
-        notearea.innerHTML = "Note has been cleared"
-        click++;
+        notearea.value = "Note has been cleared"
+        click = 0;
     }
 }
 
 
  const notesArray = [
      { title: "note one", body: "some text 1"},
-     { title: "note two", body: "some text 2"},
+     { title: "note two", body: "some text 2"}
 ]
 
 
 const ul = document.getElementById("ul");
+
 function saveNote(notesArray) {
     listLength = notearea.value.split(".").length;
     title = notearea.value.split(".")[0];
@@ -77,4 +78,7 @@ function saveNote(notesArray) {
     ul.innerHTML += `<li> ${title} </li>`
 }
 
-
+ul.addEventListener ('click', (e) => {
+    const targetNote = notesArray.find(n => n["title"] == e.target.innerText)
+    notearea.innerHTML = targetNote["body"];
+})
