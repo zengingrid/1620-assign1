@@ -75,7 +75,7 @@ function saveNote(notesArray) {
     body= notearea.value.split(".").splice(1,listLength);
     newObject = {title: `${title}`, body: `${body}`};
     notesArray.push(newObject);
-    ul.innerHTML += `<li> ${title} </li>`
+    ul.insertAdjacentHTML('beforeend', `<li> ${title}</li>`)
 }
 
 ul.addEventListener ('click', (e) => {
