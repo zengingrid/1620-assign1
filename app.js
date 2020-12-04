@@ -2,11 +2,12 @@ const header = document.querySelector (".header");
 const footer = document.querySelector (".footer");
 const container = document.querySelector (".container");
 const nav = document.querySelector(".nav");
-var notearea = document.getElementById("notearea");
+const notearea = document.getElementById("notearea");
 const newBtn = document.getElementById("new");
 const saveBtn = document.getElementById("save");
 const darkBtn = document.getElementById("dark");
 const cancelBtn = document.getElementById("cancel");
+const ul = document.getElementById("ul");
 
 let state = 0;
 function changeTheme() {
@@ -67,8 +68,6 @@ var notesArray = [
 ]
 
 
-const ul = document.getElementById("ul");
-
 function saveNote(notesArray) {
     listLength = notearea.value.split("\n").length;
     title = notearea.value.split("\n")[0];
@@ -77,6 +76,7 @@ function saveNote(notesArray) {
     notesArray.push(newObject);
     ul.insertAdjacentHTML('beforeend', `<li> ${title}</li>`)
 }
+
 
 ul.addEventListener ('click', (e) => {
      const targetNote = notesArray.find(n => n["title"] == e.target.innerText)
